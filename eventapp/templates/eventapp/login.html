@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <img id="logo" src="https://efuturex.com/static/assets/img/EFUTUREX-Logo.png" alt="logo of efuturex">
+        
+        <nav>
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
+        </nav>
+    </header>
+    <section id="event-details">
+        <form action="" method="" class="apply-form">
+            <h3>Login</h3>
+            
+            <label for="email">Email:</label>
+            <input type="email" placeholder="Enter email"><br><br>
+            <label for="phone">Password:</label>
+            <input type="password" placeholder="Enter password"><br><br>
+            <input id="b" type="submit" value="LOGIN">
+        </form>
+    </section><!--  -->
+    <footer>
+        <p>&copy;2023 Event Management system</p>
+    </footer>
+</body>
+</html>

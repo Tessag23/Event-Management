@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header>
+        <img id="logo" src="https://efuturex.com/static/assets/img/EFUTUREX-Logo.png" alt="logo of efuturex">
+        <nav>
+            <a class="nav-link" href="{% url 'index' %}">Home</a>
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+            <a class="nav-link" href="">Registration</a>
+        </nav>
+    </header>
+    
+    <section id="event-details">
+        <!-- <div> -->
+            <h2 class="event-title"> {{event.event_title}}</h2>
+            <p class="event-location">Location:{{event.location}}</p>
+            <p class="event-date">Date: {{event.date}}</p>
+            <p class="event-description">{{event.description}}</p>
+            <form action="{% url 'eventdetail' event.pk %}" method="POST" class="apply-form">
+                <h3>Apply here</h3>
+                {% csrf_token %}
+                <!-- {{form}} -->
+                {{form.as_p}} <!-- render form as paragraph -->
+                
+                <!-- <label for="fullname">Full name:</label>
+                <input type="text"><br><br>
+                <label for="email">Email:</label>
+                <input type="email"><br><br>
+                <label for="phone">Phone no:</label>
+                <input type="tel"><br><br>-->
+                <input id="b" type="submit" value="APPLY">
+            </form>
+            
+        <!-- </div> -->
+    </section><!--  -->
+    <footer id="f">
+        <p>&copy;2023 Event Management system</p>
+    </footer>
+</body>
+</html>
